@@ -4,8 +4,7 @@ import Myheader from './Message';
 import { useState } from 'react';
 import Visible from './TestState';
 import Mybot from './Практика/Practic';
-
-
+import Myptactic from './Практика/trenirovka';
 
 function App() {
   // Ниже рендер  массива начало
@@ -42,6 +41,7 @@ console.log('render')
 
 {/* //Практика начало */}
 <Mybot></Mybot>
+<Myptactic></Myptactic>
 
 
 
