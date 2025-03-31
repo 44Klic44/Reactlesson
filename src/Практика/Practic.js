@@ -1,54 +1,63 @@
 
 import React, { useState } from 'react'; //импортируем useStbate
 
+function Mybot() { //Cоздали компонент
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+  });
+// formData – это объект состояния, который хранит данные формы:
+// username – для имени пользователя (изначально пустая строка '').
+// email – для email (изначально пустая строка '').
+// setFormData – функция для обновления состояния.
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value, // Динамическое обновление поля по его `name`
+    });
+  };
+// e.target – элемент, в котором произошло изменение (инпут).
+// name value – деструктуризация из e.target:
+// name – атрибут name инпута (username или email).
 // value – введённый текст.
-
 // ...formData – оператор spread, копирует текущее состояние.
-
 // [name]: value – динамически обновляет поле по его имени.
 
-// Пример:
-// Если вводим "Alex" в поле username, то:
 
-// javascript
-// Copy
-// setFormData({
-//   ...formData,  // { username: '', email: '' }
-//   username: 'Alex',  // Обновляем только username
-// });
-// 3. Обработчик отправки (handleSubmit)
-// javascript
-// Copy
-// const handleSubmit = () => {
-//   console.log(formData);  // Выводим текущее состояние формы
-// };
-// При клике на кнопку выводит в консоль объект formData:
+  const handleSubmit = () => { // Выводим текущее состояние формы
+    console.log(formData); // { username: "...", email: "..." }
+  };
+//вывели значения в консоль
 
-// javascript
-// Copy
-// { username: "Alex", email: "alex@example.com" }
-// 4. Рендеринг формы (JSX)
-// jsx
-// Copy
-// return (
-//   <div>
-//     <input
-//       type="text"
-//       name="username"
-//       value={formData.username}
-//       onChange={handleChange}
-//       placeholder="Имя пользователя"
-//     />
-//     <input
-//       type="email"
-//       name="email"
-//       value={formData.email}
-//       onChange={handleChange}
-//       placeholder="Email"
-//     />
-//     <button onClick={handleSubmit}>Отправить</button>
-//   </div>
-// );
+  return (
+    <div>
+      <input
+        type="text"
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
+        placeholder="Имя пользователя"
+      />
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+      <button onClick={handleSubmit}>Отправить</button>
+
+      <p>{formData.email}</p>
+      <p>{formData.username}</p>
+    </div>
+  );
+}
+
+export default Mybot;
+
 // Поля ввода (input):
 
 // name="username" и name="email" – определяют, какое поле обновлять.
@@ -69,61 +78,3 @@ import React, { useState } from 'react'; //импортируем useStbate
 // Аналогично для поля email.
 
 // При клике на кнопку handleSubmit выводит актуальные данные.
-
-// 🔹 Ключевые моменты
-// Управляемые компоненты – значения инпутов контролируются React (value={formData.field}).
-
-// Динамическое обновление – один обработчик handleChange для всех полей благодаря name.
-
-// Иммутабельность – при обновлении состояния создаётся новый объект (...formData).
-
-
-
-
-
-
-
-
-
-import React, { useState } from 'react';
-
-function Mybot() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value, // Динамическое обновление поля по его `name`
-    });
-  };
-
-  const handleSubmit = () => {
-    console.log(formData); // { username: "...", email: "..." }
-  };
-
-  return (
-    <div>
-      <input
-        type="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-        placeholder="Имя пользователя"
-      />
-      <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
-      <button onClick={handleSubmit}>Отправить</button>
-    </div>
-  );
-}
-
-export default Mybot;

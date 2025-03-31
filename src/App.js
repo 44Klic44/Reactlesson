@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Myheader from './Message';
 import { useState } from 'react';
-// import Mystate from './TestState';
 import Visible from './TestState';
+import Mybot from './Практика/Practic';
 
 
 
@@ -41,7 +41,7 @@ console.log('render')
 
 
 {/* //Практика начало */}
-
+<Mybot></Mybot>
 
 
 
