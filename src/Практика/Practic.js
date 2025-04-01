@@ -6,6 +6,11 @@ function Mybot() { //Cоздали компонент
     username: '',
     email: '',
   });
+
+
+  const [update, setUpdate] = useState(null)
+  const [robot, setRobot] = useState('')
+  const robotmassege = "ROBOT ОТВЕТИЛ"
 // formData – это объект состояния, который хранит данные формы:
 // username – для имени пользователя (изначально пустая строка '').
 // email – для email (изначально пустая строка '').
@@ -33,7 +38,31 @@ function Mybot() { //Cоздали компонент
 
   const handleSubmit = () => { // Выводим текущее состояние формы
     console.log(formData); // { username: "...", email: "..." }
+
+
+
+//отчищаем поля после отправки
+    setFormData({
+      username: '',
+      email: '',
+    })
+
+    // вывдеме введенные ранее значения в поля
+setUpdate({
+  ...formData
+  });
+  
+ // Ответ робота
+  setTimeout(()=>{
+    console.log(robotmassege)
+    setRobot("ROBOT OTVET")
+  }, 1500)
   };
+
+
+  
+
+
 //вывели значения в консоль
 
   return (
@@ -53,9 +82,17 @@ function Mybot() { //Cоздали компонент
         placeholder="Email"
       />
       <button onClick={handleSubmit}>Отправить</button>
+{update && (
 
-      <p>{formData.email}</p>
-      <p>{formData.username}</p>
+<div> <p>{update.email} </p> <p>{update.username}</p>  </div>
+)}
+
+{robot && (
+
+<div> <p>{robot } </p>  </div>
+)}
+      {/* <p>{formData.email}</p>
+      <p>{formData.username}</p> */}
     </div>
   );
 }

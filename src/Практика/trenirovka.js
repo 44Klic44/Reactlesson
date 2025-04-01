@@ -13,7 +13,6 @@ function Myptactic() {
 
   const [submittedData, setSubmittedData] = useState(null);
   const [robotMessage, setRobotMessage] = useState('');
-  const [r, setR] = useState('true');
   // submittedData - будет хранить последние отправленные данные
  // robotMessage - для хранения сообщения от "робота"
 

@@ -40,7 +40,7 @@ console.log('render')
 
 
 {/* //Практика начало */}
-{/* <Mybot></Mybot> */}
+<Mybot></Mybot>
 <Myptactic></Myptactic>
 
 
