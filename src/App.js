@@ -5,16 +5,18 @@ import { useState } from 'react';
 import Visible from './TestState';
 import Mybot from './Практика/Practic';
 import Myptactic from './Практика/trenirovka';
+import Myrobot from './Lesson3';
+import MyComponent from './UseCallback/Lesson-useCallnack';
 
 function App() {
   // Ниже рендер  массива начало
-  const [arr, setArr] = useState([
+  // const [arr, setArr] = useState([
 
-    "message 1",
-    "message 2",
-    "message 3",
-    "message 4",
-  ])
+  //   "message 1",
+  //   "message 2",
+  //   "message 3",
+  //   "message 4",
+  // ])
   // Ниже рендер  массива конец
 
 
@@ -28,7 +30,7 @@ console.log('render')
   console.log(<Myheader name = {"ALEX"}/>)
 
   const name =" РОМАН"
-  const theme = "light"
+  // const theme = "light"
 
  
 
@@ -40,6 +42,8 @@ console.log('render')
 
 
 {/* //Практика начало */}
+<MyComponent></MyComponent>
+<Myrobot ></Myrobot>
 <Mybot></Mybot>
 <Myptactic></Myptactic>
 
@@ -56,7 +60,7 @@ console.log('render')
 
 
 {/* Ниже рендер массива */}
-     {arr.map((e,i)=> <div key={i}>{e}</div>) }
+     {/* {arr.map((e,i)=> <div key={i}>{e}</div>) } */}
 
       <div><Visible data={"ПО "}/></div>
         {/*  в count храниться состояние */}
@@ -75,7 +79,7 @@ console.log('render')
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <h1></h1>
+        {/* <h1></h1> */}
         <a
           className="App-link"
           href="https://reactjs.org"
