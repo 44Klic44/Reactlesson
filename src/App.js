@@ -7,6 +7,8 @@ import Mybot from './Практика/Practic';
 import Myptactic from './Практика/trenirovka';
 import Myrobot from './Lesson3';
 import MyComponent from './UseCallback/Lesson-useCallnack';
+import DivChilde from './Lesson4';
+import ChatApp from './Приложение чат/Chat';
 
 function App() {
   // Ниже рендер  массива начало
@@ -29,6 +31,8 @@ console.log('render')
 
   console.log(<Myheader name = {"ALEX"}/>)
 
+
+  
   const name =" РОМАН"
   // const theme = "light"
 
@@ -38,9 +42,11 @@ console.log('render')
 
 
     <div className="App">
+<DivChilde>1111</DivChilde>
+<DivChilde>2222</DivChilde>
+<DivChilde render ={(className)=><div className='className'>ДИВ ВНУТРИ РЕНДЕРА</div>}></DivChilde>
 
-
-
+<ChatApp></ChatApp>
 {/* //Практика начало */}
 <MyComponent></MyComponent>
 <Myrobot ></Myrobot>
@@ -69,7 +75,7 @@ console.log('render')
       <button onClick={()=>{setCount(prevstate => ++prevstate)}}>Инкремент</button>
 
        {/* вызывыем наш созданный компонент внутри кода 'это компонент из файл MyMessege */}
-        <Myheader name = {"ALEX"} age = {26} theme="theme"/>
+        <Myheader name = {"ALEX"} age = {26} theme="theme"> <div>CHildren</div> <MyComponent></MyComponent>  </Myheader>
    
        
 

@@ -81,7 +81,7 @@ setUpdate({
         onChange={handleChange}
         placeholder="Email"
       />
-      <button onClick={handleSubmit}>Отправить</button>
+      <button onClick={handleSubmit}><p>Отправить</p></button>
 {update && (
 
 <div> <p>{update.email} </p> <p>{update.username}</p>  </div>

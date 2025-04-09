@@ -1,7 +1,7 @@
 // Cсоздаем компанент
 function Myheader({name, age, theme}){
 
-
+console.log({name})
     //Возвращаем JSX код
     return(
       
